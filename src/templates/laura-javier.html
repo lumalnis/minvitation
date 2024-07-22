@@ -30,16 +30,17 @@
     </header>
     <main>
         <div class="pushAll"></div>
-        <div class="couple-photo"><img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg "
-                alt="couple">
-            <picture>
-                <!--la foto para mobile y ipad-->
-                <source srcset="" media="(max-width: 1023px)">
-                <!--la foto para desktop-->
-                <source srcset="" media="(max-width: 1024px)">
-                <!--la foto por defecto-->
-                <img src="" alt="couple">
-            </picture>
+        <div class="couple-photo">
+            <img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg " alt="couple">
+            <!--NO FUNCIONA PICTURE CUANDO LO PONGO
+            <picture > -->
+            <!--la foto para mobile y ipad
+                <source srcset="/src/static/img/laura-javier/AdobeStock_274990171_Preview.jpeg" media="(max-width: 1023px)">-->
+            <!--la foto para desktop
+                <source srcset="/src/static/img/laura-javier/AdobeStock_265301052_Preview.jpeg" media="(max-width: 1024px)">-->
+            <!--la foto por defecto
+                <img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg" alt="couple">
+            </picture> -->
             <!--lo puedo poner en picture y que cambie segun medida-->
         </div>
         <!--<div class="saveDate">
@@ -74,7 +75,7 @@
             <div class="infoWedding-date">
                 <p>WE HOPE YOU JOIN US ON</p>
                 <p>September 20, 2024</p>
-                <button class="saveDate-btn">Agendar</button>
+                <button class="primary-btn">Agendar</button>
 
             </div>
             <div class="infoWedding-cards">
