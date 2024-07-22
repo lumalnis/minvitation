@@ -253,6 +253,46 @@ main {
 
 }
 
+/*=============== GALLERY ===============*/
+.gallery__overflow {
+    margin: 20px auto;
+    width: 100%;
+    height: 30vh;
+}
+
+.swiper-wrapper {}
+
+.swiper-slide {
+    width: fit-content !important;
+    margin: 0 4px;
+    box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.gallery__thumbnail {
+    width: 400px;
+    height: 30vh;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.bigg {
+    width: 800px;
+}
+
+.gallery__thumbnail-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+.swiper-horizontal.swiper-css-mode>.swiper-wrapper {
+    scroll-snap-type: initial;
+}
+
 
 @media (min-width: 765px) {
 

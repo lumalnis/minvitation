@@ -11,6 +11,8 @@
     <meta name="description" content="minvitation wedding and birthdays cards">
     <link rel="icon" href=".ico">
     <link rel="stylesheet" type="text/css" href="/src/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/static/swiper-bundle-min.css">
+    <script src="/src/static/script.js"></script>
 </head>
 
 <body>
@@ -104,26 +106,44 @@
             <div class="infoWedding-counter">
 
                 <p class="counter-title">dias que faltan</p> <!--una animación cuando sea la hora o haya pasado-->
+                <div class="counter-numbers">
+                    <div class="counter-div">
+                        <span class="counter-number" id='days'>dias / </span>
+                        <p class="counter-text">dias</p>
+                    </div>
+                    <div class="counter-div">
+                        <span class="counter-number" id='hours'>horas / </span>
+                        <p class="counter-text"></p>horas </p>
+                    </div>
+                    <div class="counter-div">
+                        <span class="counter-number" id='minutes'>minutos / </span>
+                        <p class="counter-text">minutos</p>
+                    </div>
+                    <div class="counter-div">
+                        <span class="counter-number" id='seconds'>segundos / </span>
+                        <p class="counter-text">segundos </p>
+                    </div>
+                </div>
 
                 <div class="counter-numbers">
                     <div class="counter-div">
-                        <p class="counter-number">78</p>
+                        <span class="counter-number" id='days'></span>
                         <p class="counter-text">dias</p>
                     </div>
                     <span>:</span>
                     <div class="counter-div">
-                        <p class="counter-number">78</p>
-                        <p class="counter-text">dias</p>
+                        <p class="counter-number" id="hours">1</p>
+                        <p class="counter-text">horas</p>
                     </div>
                     <span>:</span>
                     <div class="counter-div">
-                        <p class="counter-number">78</p>
-                        <p class="counter-text">dias</p>
+                        <p class="counter-number" id="minutes">00</p>
+                        <p class="counter-text">minutos</p>
                     </div>
                     <span>:</span>
                     <div class="counter-div">
-                        <p class="counter-number">78</p>
-                        <p class="counter-text">dias</p>
+                        <p class="counter-number" id="seconds">00</p>
+                        <p class="counter-text">segundos</p>
                     </div>
                 </div>
             </div>
@@ -135,44 +155,44 @@
                 exercitationem culpa voluptates voluptatum porro quia dolores accusamus qui delectus optio? Quia?</p>
 
 
-            <div class="ourStory-slide gallery__overflow">
-                <div class="swiper gallery-thumbs">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="gallery__thumbnail">
-                                <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg"
-                                    alt="couple photo" class="gallery__thumbnail-img">
-                            </div>
+
+        </div>
+        <div class="ourStory-slide gallery__overflow">
+            <div class="swiper gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gallery__thumbnail">
+                            <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg" alt="couple photo"
+                                class="gallery__thumbnail-img">
                         </div>
-                        <div class="swiper-slide">
-                            <div class="gallery__thumbnail">
-                                <img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg"
-                                    alt="couple photo" class="gallery__thumbnail-img">
-                            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__thumbnail">
+                            <img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg" alt="couple photo"
+                                class="gallery__thumbnail-img">
                         </div>
-                        <div class="swiper-slide">
-                            <div class="gallery__thumbnail">
-                                <img src="/src/static/img/laura-javier/AdobeStock_265301052_Preview.jpeg"
-                                    alt="couple photo" class="gallery__thumbnail-img">
-                            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__thumbnail">
+                            <img src="/src/static/img/laura-javier/AdobeStock_265301052_Preview.jpeg" alt="couple photo"
+                                class="gallery__thumbnail-img">
                         </div>
-                        <div class="swiper-slide">
-                            <div class="gallery__thumbnail">
-                                <img src="/src/static/img/laura-javier/AdobeStock_274990171_Preview.jpeg"
-                                    alt="couple photo" class="gallery__thumbnail-img">
-                            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__thumbnail">
+                            <img src="/src/static/img/laura-javier/AdobeStock_274990171_Preview.jpeg" alt="couple photo"
+                                class="gallery__thumbnail-img">
                         </div>
-                        <div class="swiper-slide">
-                            <div class="gallery__thumbnail">
-                                <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg"
-                                    alt="couple photo" class="gallery__thumbnail-img">
-                            </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery__thumbnail">
+                            <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg" alt="couple photo"
+                                class="gallery__thumbnail-img">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="message">
             <p class="message-text">Dejanos un mensaje de amor...</p>
             <button class="message-btn">Enviar</button> <!--animacion al enviar de corazones o algo asi-->
@@ -239,8 +259,9 @@
         <h3>Algun mensaje lindo con foto??</h3>
         <p>Contacto</p>
     </footer>
-
-    <script src=""></script>
+    <!--SWIPER BUNDLE ES PARA LA GALLERIA Y LOS PACKAGE.json-->
+    <script src="/src/static/swiper-bundle.min.js"></script>
+    <script src="/src/static/gallery.js"></script>
 
 </body>
 
