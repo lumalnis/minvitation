@@ -12,7 +12,6 @@
     <link rel="icon" href=".ico">
     <link rel="stylesheet" type="text/css" href="/src/static/style.css">
     <link rel="stylesheet" type="text/css" href="/src/static/swiper-bundle-min.css">
-    <script src="/src/static/script.js"></script>
 </head>
 
 <body>
@@ -104,27 +103,27 @@
                 </div>
             </div>
             <div class="infoWedding-counter">
-
-                <p class="counter-title">dias que faltan</p> <!--una animación cuando sea la hora o haya pasado-->
-                <div class="counter-numbers">
+                <p class="counter-title over">dias que faltan</p> <!--una animación cuando sea la hora o haya pasado-->
+                <p id="message" class="counter-title"></p>
+                <div class="counter-numbers over">
                     <div class="counter-div">
-                        <span class="counter-number" id='days'>dias / </span>
-                        <p class="counter-text">dias</p>
+                        <span class="counter-number" id='days'></span>
+                        <p class="counter-text" id="daysText"></p>
                     </div>
                     <div class="counter-div">
-                        <span class="counter-number" id='hours'>horas / </span>
-                        <p class="counter-text"></p>horas </p>
+                        <span class="counter-number" id='hours'></span>
+                        <p class="counter-text" id="hoursText"></p>
                     </div>
                     <div class="counter-div">
-                        <span class="counter-number" id='minutes'>minutos / </span>
-                        <p class="counter-text">minutos</p>
+                        <span class="counter-number" id='minutes'></span>
+                        <p class="counter-text" id="minutesText"></p>
                     </div>
                     <div class="counter-div">
-                        <span class="counter-number" id='seconds'>segundos / </span>
-                        <p class="counter-text">segundos </p>
+                        <span class="counter-number" id='seconds'></span>
+                        <p class="counter-text" id="secondsText"></p>
                     </div>
                 </div>
-
+                <!--
                 <div class="counter-numbers">
                     <div class="counter-div">
                         <span class="counter-number" id='days'></span>
@@ -145,7 +144,7 @@
                         <p class="counter-number" id="seconds">00</p>
                         <p class="counter-text">segundos</p>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="ourStory">
@@ -262,6 +261,9 @@
     <!--SWIPER BUNDLE ES PARA LA GALLERIA Y LOS PACKAGE.json-->
     <script src="/src/static/swiper-bundle.min.js"></script>
     <script src="/src/static/gallery.js"></script>
+
+    <!--Para que funcione el countDown debe ir el script abajo, despues de cargar el DOM-->
+    <script src="/src/static/script.js"></script>
 
 </body>
 

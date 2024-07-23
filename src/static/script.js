@@ -1,36 +1,84 @@
-/*CUENTA REGRESIVA https://www.youtube.com/watch?v=ZbF5qomB8XM PROBAR ESTAA!!!*/
-document.addEventListener('DOMContentLoaded', () => {
-    //CAMBIAR FECHA SEGUN CORRESPONDA
-    const DATE_TARGET = new Date("07/22/2024 7:30 PM");
-    //DOM for render
-    const SPAN_DAYS = document.querySelector("span#days");
-    const SPAN_HOURS = document.querySelector("span#hours");
-    const SPAN_MINUTES = document.querySelector("span#minutes");
-    const SPAN_SECONDS = document.querySelector("span#seconds");
-    // Milliseconds for the calculations
-    const MILLISECONDS_OF_A_SECOND = 1000;
-    const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
-    const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
-    const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24;
+const getRemainTime = deadline => {
+    let now = new Date(),
+        remainTime = (new Date(deadline) - now + 1000) / 1000;
+    remainSeconds = ('0' + Math.floor(remainTime % 60)).slice(-2);
+    remainMinutes = ('0' + Math.floor(remainTime / 60 % 60)).slice(-2);
+    remainHours = ('0' + Math.floor(remainTime / 3600 % 24)).slice(-2);
+    remainDays = Math.floor(remainTime / (3600 * 24));
 
-    function updateCoutdown() {
-        //Calcs
-        const NOW = new Date()
-        const DURATION = DATE_TARGET - NOW;
-        const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
-        const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
-        const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
-        const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+    return {
+        remainTime,
+        remainSeconds,
+        remainMinutes,
+        remainHours,
+        remainDays
+    };
+};
 
-        //Render
-        SPAN_DAYS.textContent = REMAINING_DAYS;
-        SPAN_HOURS.textContent = REMAINING_HOURS;
-        SPAN_MINUTES.textContent = REMAINING_MINUTES;
-        SPAN_SECONDS.textContent = REMAINING_SECONDS;
+const countdown = (deadline, daysElem, hoursElem, minutesElem, secondsElem, messageT, daysT, hoursT, minutesT, secondsT) => {
+    const daysEl = document.getElementById(daysElem);
+    const hoursEl = document.getElementById(hoursElem);
+    const minutesEl = document.getElementById(minutesElem);
+    const secondsEl = document.getElementById(secondsElem);
+    const messageEl = document.getElementById(messageT);
+    const overEls = document.querySelectorAll('.over');
+    const daysTx = document.getElementById(daysT);
+    const hoursTx = document.getElementById(hoursT);
+    const minutesTx = document.getElementById(minutesT);
+    const secondsTx = document.getElementById(secondsT);
 
-    }
-    updateCoutdown();
-    setInterval(updateCoutdown, MILLISECONDS_OF_A_SECOND);
-});
+    const timerUpdate = setInterval(() => {
+        let t = getRemainTime(deadline);
+        //el.innerHTML = `${t.remainDays}d:${t.remainHours}h:${t.remainMinutes}m:${t.remainSeconds}s`;
+        //backticks teclado en sp = Alt+96 `` or  AltGr +  } + espacio 
 
-/*ARMAR QUE CAMBIE EN SINGULAR O PLURAL... HORA/HORA Y QUE CUANDO LLEGUE A CERO Q SE APAGUE O TIRA UNA ANIMACION*/
+        if (t.remainTime <= 1) {
+            clearInterval(timerUpdate);
+            overEls.forEach(el => el.style.display = 'none');
+            const now = new Date();
+            const eventDate = new Date(deadline);
+
+            if (now.toDateString() === eventDate.toDateString()) {
+                //ENGLISH
+                /*
+                    messageEl.innerHTML = `It's Today!`;
+                } else {
+                    messageEl.innerHTML = `The event is over.`;
+                }
+                */
+                //SPANISH
+                messageEl.innerHTML = `¡Es Hoy!`;
+            } else {
+                messageEl.innerHTML = `El evento finalizó.`;
+            }
+            
+        } else {
+
+            daysEl.innerHTML = t.remainDays;
+            hoursEl.innerHTML = t.remainHours;
+            minutesEl.innerHTML = t.remainMinutes;
+            secondsEl.innerHTML = t.remainSeconds;
+
+            //SINGULAR OR PLURAL
+            //ENGLISH
+            /*
+            daysTx.innerHTML = t.remainDays === 1 ? `Day` : 'Days';
+            hoursTx.innerHTML = t.remainHours === 1 ? `Hour` : 'Hours';
+            minutesTx.innerHTML = t.remainMinutes === 1 ? `Minute` : 'Minutes';
+            secondsTx.innerHTML = t.remainSeconds === 1 ? `Second` : 'Seconds';
+            */
+            //SPANISH
+            daysTx.innerHTML = t.remainDays === 1 ? `Día` : 'Días';
+            hoursTx.innerHTML = t.remainHours === 1 ? `Hora` : 'Horas';
+            minutesTx.innerHTML = t.remainMinutes === 1 ? `Minuto` : 'Minutos';
+            secondsTx.innerHTML = t.remainSeconds === 1 ? `Segundo` : 'Segundos';
+
+        }
+    }, 1000)
+};
+
+countdown('Jul 21 2024 14:05:50 GMT-0300', 'days', "hours", "minutes", "seconds", 'message', 'daysText', 'hoursText', 'minutesText', 'secondsText');
+
+/*FORMATO (Jul 24 2024 10:32:53 GMT-0300) GMT-0300 es hora Argentina*/
+
+
