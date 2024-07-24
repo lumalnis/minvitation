@@ -112,18 +112,38 @@ countdown('Jul 25 2024 14:05:50 GMT-0300', 'days', "hours", "minutes", "seconds"
 
 
 /*NOTES*/
-
 document.addEventListener("DOMContentLoaded", function () {
     let createBox = document.getElementsByClassName('createBox')[0];
     let notes = document.getElementsByClassName('notes')[0];
     let input = document.getElementById('userInput');
     let i = 0;
 
+    //mover de a paginas
+    //PAGINA let currentPage = 0;
+    //PAGINA let notesPerPage = 5;
+
+    let startNoteIndex = 0;
+    const notesPerPage = 5;
+
     input.addEventListener('keydown', content);
 
     document.getElementById("create").addEventListener("click", function () {
         createBox.style.display = "block";
         input.focus();
+    });
+
+    document.getElementById("prev").addEventListener("click", function () {
+        //PAGINA               currentPage--;
+        //POR NOTA currentNoteIndex--;
+        startNoteIndex--;
+        updateNotesVisibility();
+    });
+
+    document.getElementById("next").addEventListener("click", function () {
+        //PAGINA         currentPage++;
+        //POR NOTA currentNoteIndex++;
+        startNoteIndex++;
+        updateNotesVisibility();
     });
 
     function content(e) {
@@ -146,11 +166,41 @@ document.addEventListener("DOMContentLoaded", function () {
         div.className = 'note';
         div.innerHTML = '<div class="details"><h3>' + text + '</h3></div>';
 
-        //para eliminar loa notes
+        //para eliminar las notes
         //div.addEventListener("dblclick", function() { div.remove(); });
 
         div.setAttribute('style', 'background:' + color() + ';');
-
         notes.appendChild(div);
+        updateNotesVisibility();
+    }
+
+    function updateNotesVisibility() {
+        let allNotes = notes.getElementsByClassName('note');
+        let totalNotes = allNotes.length;
+        //PAGINA         let start = currentPage * notesPerPage;
+        //PAGINA         let end = start + notesPerPage;
+       
+        //muestra hasta X notas |
+        for (let j = 0; j < totalNotes; j++) {
+            //PAGINA if (j >= start && j < end) {
+            //POR NOTA if(j === currentNoteIndex){
+            if (j >= startNoteIndex && j < startNoteIndex + notesPerPage) {
+                allNotes[j].style.display = 'block';
+            } else {
+                allNotes[j].style.display = 'none';
+            }
+        }
+        //PAGINA         document.getElementById("prev").disabled = currentPage === 0;
+        //PAGINA         document.getElementById("next").disabled = end >= totalNotes;
+
+
+        //POR NOTA document.getElementById("prev").disabled = currentNoteIndex === 0;
+        //POR NOTA document.getElementById("next").disabled = currentNoteIndex === totalNotes - 1;
+        document.getElementById("prev").disabled = startNoteIndex === 0;
+        document.getElementById("next").disabled = startNoteIndex + notesPerPage >= totalNotes;
     }
 });
+
+/*puedo armar que para desktop pasen por pagina completa y mobile y ipad pasen de a una... o que segun el ancho muestre cierta cantidad de notas*/
+//VER COMO SUBIR LAS NOTAS A SHEETS
+//PENSAR EN UN BACKEND PARA MANEJAR LOS EXCELS Y DATOS PARA QUE NO SE PIERDAN .... 

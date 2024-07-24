@@ -382,6 +382,30 @@ main {
     font-size: 1.45em;
 }
 
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navigation button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.navigation button:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+}
+
+
+
+/*MEDIAS QUERY*/
 @media (min-width: 765px) {
 
     nav {
