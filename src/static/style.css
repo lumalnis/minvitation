@@ -16,6 +16,8 @@
     src: url(/src/static/fonts/Varta-VariableFont_wght.ttf);
 }
 
+@import url('https://fonts-googleapis.com/css2?family=Handlee&display=swap');
+
 :root {
     --Almost-White: hsl(0, 0%, 98%);
     --Medium-Gray: hsl(0, 0%, 41%);
@@ -26,6 +28,7 @@
     --beigeDark: hsl(41, 23%, 86%);
     --beigeOpacity: hsla(41, 23%, 86%, 0.5);
     --gris: hsl(273, 0%, 50%);
+    --note: 200px;
 }
 
 img {
@@ -95,49 +98,51 @@ main {
         display: none;
     }
 
-    & .joinUs {
+    & .couple {
         display: flex;
         flex-direction: column;
         padding-bottom: 42px;
 
-        & .joinUs-paragraph {
+        & .couple-paragraph {
             padding: 12px 8px 8px;
             margin-bottom: 16px;
+            text-align: center;
         }
 
-        & .joinUs-title {
+        & .couple-title {
             font-size: 2.5em;
             margin-bottom: 42px;
+            line-height: 44px;
             font-family: "BrittanySignature";
             text-align: center;
         }
 
-        & .joinUs-text {
+        & .couple-text {
             font-size: 1rem;
             margin-top: 12px;
         }
 
-        & .joinUs-img {
+        & .couple-img {
             width: 100%;
         }
 
-        & .joinUs-img img {}
+        & .couple-img img {}
     }
 
-    .infoWedding {
+    .joinUs {
         text-align: center;
         margin: 42px -34px;
         padding: 42px 0;
         background-color: var(--Almost-White);
 
 
-        & .infoWedding-date {
+        & .joinUs-date {
             margin: 0 8px 56px;
             line-height: 1.6em;
             font-size: 1.3em;
         }
 
-        & .infoWedding-date p {
+        & .joinUs-date p {
             line-height: 1.6em;
             font-size: 1.3em;
         }
@@ -157,133 +162,225 @@ main {
             }
         }
 
-    }
-
-    & .infoWedding-cards {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 42px;
-
-        & .card {
-            width: 180px;
-            margin: 32px 8px;
-            padding: 0 4px 4px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-            background-color: var(--Almost-White);
-            border-radius: 12px;
-        }
-
-        & .card img {
-            width: 76%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            margin-top: -28px;
-            border-radius: 50px;
-        }
-
-        & .card h4 {
-            margin-top: 1.5em;
-            font-size: 1.3em;
-            font-weight: 500;
-        }
-
-        & .card p {
-            margin: 8px 0;
-            line-height: 1.5em;
-        }
-    }
-
-    & .infoWedding-counter {
-        margin-bottom: 42px;
-
-        & .counter-title {
-            font-size: 1.5em;
-        }
-
-        & .counter-numbers {
+        & .joinUs-cards {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            margin: 32px auto 0;
-            width: 70%;
-            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 42px;
 
-            & .counter-div {
-                padding: 0 4px;
+            & .card {
+                width: 180px;
+                margin: 32px 8px;
+                padding: 0 4px 4px;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+                background-color: var(--Almost-White);
+                border-radius: 12px;
+            }
+
+            & .card img {
+                width: 76%;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+                margin-top: -28px;
+                border-radius: 50px;
+            }
+
+            & .card h4 {
+                margin-top: 1.5em;
+                font-size: 1.3em;
+                font-weight: 500;
+            }
+
+            & .card p {
+                margin: 8px 0;
+                line-height: 1.5em;
+            }
+        }
+
+        & .joinUs-counter {
+            margin-bottom: 42px;
+
+            & .counter-title {
+                font-size: 1.5em;
+            }
+
+            & .counter-numbers {
                 display: flex;
-                flex-direction: column;
-            }
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 32px auto 0;
+                width: 70%;
+                text-align: center;
 
-            & .counter-number {
-                font-size: 1.7em;
-                font-weight: 600;
-            }
+                & .counter-div {
+                    padding: 0 4px;
+                    display: flex;
+                    flex-direction: column;
+                }
 
-            & .counter-text {
-                font-size: 0.8em;
+                & .counter-number {
+                    font-size: 1.7em;
+                    font-weight: 600;
+                }
+
+                & .counter-text {
+                    font-size: 0.8em;
+                }
             }
         }
     }
 
     & .ourStory {
+        padding: 32px 0;
+
+        & .ourStory-paragraph {
+            text-align: center;
+            padding: 0px 4px 24px;
+        }
+
         & .ourStory-title {
             font-size: 2.5em;
-            margin-bottom: 24px;
+            line-height: 44px;
+            margin-bottom: 32px;
         }
 
         & .ourStory-text {
             font-size: 1rem;
+            /*16px*/
             margin-top: 12px;
         }
 
-        & .ourStory-slide {}
+        /*=============== GALLERY ===============*/
+        & .gallery__overflow {
+            margin: 0px auto;
+            width: 100%;
+            height: 30vh;
 
+            & .swiper-slide {
+                width: fit-content !important;
+                margin: 0 4px;
+                box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.3);
 
+                & .gallery__thumbnail {
+                    width: 400px;
+                    height: 30vh;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: transform .3s;
+                }
+
+                & .gallery__thumbnail-img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    inset: 0;
+                    margin: auto;
+                }
+            }
+        }
+
+    }
+
+    & .message {
+        display: flex;
+        background-color: var(--Medium-Gray);
     }
 
 }
 
-/*=============== GALLERY ===============*/
-.gallery__overflow {
-    margin: 20px auto;
+.container {
+    position: relative;
     width: 100%;
-    height: 30vh;
-}
-
-.swiper-wrapper {}
-
-.swiper-slide {
-    width: fit-content !important;
-    margin: 0 4px;
-    box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.3);
-}
-
-.gallery__thumbnail {
-    width: 400px;
-    height: 30vh;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform .3s;
-}
-
-.bigg {
-    width: 800px;
-}
-
-.gallery__thumbnail-img {
-    object-fit: cover;
     height: 100%;
-    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 50px;
+}
+
+.container .notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .notes .note {
+    position: relative;
+    width: var(--note);
+    height: var(--note);
+    background-color: yellow;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    font-family: 'Handlee', cursive;
+}
+
+.container .notes .note::before {
+    content: 'Double click to remove this note.';
     position: absolute;
-    inset: 0;
-    margin: auto;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 100%;
+    padding: 3px 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85em;
+    opacity: 0;
+    transition: 0.5s;
 }
 
-.swiper-horizontal.swiper-css-mode>.swiper-wrapper {
-    scroll-snap-type: initial;
+.container .notes .note:hover::before {
+    opacity: 1;
 }
 
+#create {
+    position: relative;
+    width: var(--note);
+    height: var(--note);
+    display: flex;
+    background-color: firebrick;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+    cursor: pointer;
+}
+
+#create i {
+    position: absolute;
+    color: var(--Almost-White);
+}
+
+.createBox {
+    position: relative;
+    width: var(--note);
+    height: var(--note);
+    z-index: 1000;
+    display: none;
+}
+
+.createBox textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--note);
+    height: var(--note);
+    padding: 20px;
+    outline: none;
+    font-size: 0.2em;
+    resize: none;
+}
+
+.details h3 {
+    font-family: 'Handlee', cursive;
+    user-select: none;
+    font-size: 1.45em;
+}
 
 @media (min-width: 765px) {
 
@@ -306,29 +403,29 @@ main {
             margin-bottom: 56px;
         }
 
-        & .joinUs {
+        & .couple {
             padding-bottom: 56px;
 
-            & .joinUs-paragraph {
-                padding-top: px;
+            & .couple-paragraph {
+                text-align: left;
             }
 
-            & .joinUs-title {
+            & .couple-title {
                 font-size: 4em;
                 line-height: 64px;
             }
 
-            & .joinUs-text {
-                font-size: 1.2rem;
+            & .couple-text {
+                font-size: 1em;
                 margin-top: 24px;
             }
         }
 
-        .infoWedding {
+        .joinUs {
             padding: 56px 0;
             margin: 56px -34px;
 
-            & .infoWedding-date p {
+            & .joinUs-date p {
                 font-size: 1.7em;
                 line-height: 2em;
             }
@@ -339,7 +436,7 @@ main {
                 margin: 12px 0 56px;
             }
 
-            & .infoWedding-cards {
+            & .joinUs-cards {
                 & .card {
                     width: 200px;
                     margin-bottom: 56px;
@@ -355,7 +452,7 @@ main {
             }
 
 
-            & .infoWedding-counter {
+            & .joinUs-counter {
                 margin-bottom: 56px;
 
                 & .counter-title {
@@ -367,8 +464,7 @@ main {
                     margin: 64px auto 0;
                 }
 
-                & .counter-div {
-                }
+                & .counter-div {}
 
                 & .counter-number {
                     font-size: 3em;
@@ -376,11 +472,32 @@ main {
 
                 & .counter-text {
                     font-size: 1em;
-                    margin-top: 8px;}
+                    margin-top: 8px;
+                }
             }
         }
 
-        /*rosa es main*/
+        & .ourStory {
+            padding-bottom: 56px;
+
+            & .ourStory-paragraph {
+                width: 90%;
+                text-align: left;
+            }
+
+            & .ourStory-title {
+                font-size: 4em;
+                line-height: 64px;
+            }
+
+            & .ourStory-text {
+                font-size: 1em;
+                /*16px*/
+                margin-top: 12px;
+            }
+
+            /*rosa es main*/
+        }
     }
 }
 
@@ -411,36 +528,38 @@ main {
             margin-bottom: 72px;
         }
 
-        & .joinUs {
-            padding: 0 18px 0;
+        & .couple {
+            padding: 0 32px 64px;
             flex-direction: row;
-            padding-bottom: 64px;
 
-
-            & .joinUs-paragraph {
-                padding: 24px 16px 0;
+            & .couple-paragraph {
+                padding: 24px 24px 0 0;
                 width: 50%;
             }
 
-            & .joinUs-text {
-                font-size: 1.3rem;
-                margin-top: 32px;
+            & .couple-title {
+                margin-bottom: 56px;
             }
 
-            & .joinUs-img {
+            & .couple-text {
+                font-size: 1.2em;
+                line-height: 1.3em;
+            }
+
+            & .couple-img {
                 width: 50%;
             }
 
-            & .joinUs-img img {
+            & .couple-img img {
                 height: 100%;
             }
         }
 
-        .infoWedding {
+        .joinUs {
             padding: 72px 0;
             margin: 72px 0;
 
-            & .infoWedding-date p {
+            & .joinUs-date p {
                 font-size: 2em;
             }
 
@@ -450,7 +569,7 @@ main {
                 margin: 12px 0 64px;
             }
 
-            & .infoWedding-cards {
+            & .joinUs-cards {
                 padding-bottom: 32px;
                 margin-bottom: 64px;
 
@@ -470,7 +589,7 @@ main {
             }
 
 
-            & .infoWedding-counter {
+            & .joinUs-counter {
                 margin-bottom: 64px;
 
                 & .counter-title {
@@ -479,11 +598,10 @@ main {
 
                 & .counter-numbers {
                     width: 45%;
-                    margin: 72px auto 0; 
+                    margin: 72px auto 0;
                 }
 
-                & .counter-div {
-                }
+                & .counter-div {}
 
                 & .counter-number {
                     font-size: 3.5em;
@@ -493,6 +611,23 @@ main {
                     font-size: 1.2em;
                     margin-top: 12px;
                 }
+            }
+        }
+
+        & .ourStory {
+            padding: 0 32px 64px;
+
+            & .ourStory-paragraph {
+                width: 90%;
+            }
+
+            & .ourStory-title {
+                margin-bottom: 32px;
+            }
+
+            & .ourStory-text {
+                font-size: 1.2em;
+                line-height: 1.3em;
             }
         }
     }

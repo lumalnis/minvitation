@@ -12,6 +12,7 @@
     <link rel="icon" href=".ico">
     <link rel="stylesheet" type="text/css" href="/src/static/style.css">
     <link rel="stylesheet" type="text/css" href="/src/static/swiper-bundle-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -51,35 +52,35 @@
             </p>
             <button class="saveDate-btn">Agendar</button>
         </div>-->
-        <div class="joinUs">
-            <div class="joinUs-paragraph">
-                <h3 class="joinUs-title">Laura & Javier</h3>
-                <p class="joinUs-text">Come join us for a special day of love and celebration! We are delighted to
+        <div class="couple">
+            <div class="couple-paragraph">
+                <h3 class="couple-title">Laura & Javier</h3>
+                <p class="couple-text">Come join us for a special day of love and celebration! We are delighted to
                     invite you to our wedding, a memorable experience filled with joy and romance.
                     As we embark on this
                     new chapter of our lives, we want you to be there to share in the happiness and witness our union.
                 </p>
-                <p class="joinUs-text">Let’s come together to celebrate two hearts becoming one and create memories that
-                    will last a
-                    lifetime. Enjoy an evening of heartfelt vows, delicious food, and joyful dancing.</p>
-                <p class="joinUs-text">We look
+                <p class="couple-text">Let’s come together to celebrate two hearts becoming one and create memories that
+                    will last a lifetime. Enjoy an evening of heartfelt vows, delicious food, and joyful dancing.
+                </p>
+                <p class="couple-text">We look
                     forward to
                     celebrating this special occasion with you and making it a day we will all cherish forever. Your
                     presence would mean the world to us. Save the date and join us for a magical celebration!
                 </p>
             </div>
-            <div class="joinUs-img">
+            <div class="couple-img">
                 <img src="/src/static/img/laura-javier/AdobeStock_274990171_Preview.jpeg" alt="couple photo">
             </div>
         </div>
-        <div class="infoWedding">
-            <div class="infoWedding-date">
+        <div class="joinUs">
+            <div class="joinUs-date">
                 <p>WE HOPE YOU JOIN US ON</p>
                 <p>September 20, 2024</p>
                 <button class="primary-btn">Agendar</button>
 
             </div>
-            <div class="infoWedding-cards">
+            <div class="joinUs-cards">
                 <div class="card">
                     <img src="/src/static/img/iglesia.png" alt="church-icon">
                     <h4>Ceremonia</h4>
@@ -102,9 +103,10 @@
                         19:00hs</p>
                 </div>
             </div>
-            <div class="infoWedding-counter">
+            <div class="joinUs-counter">
                 <p class="counter-title over">dias que faltan</p> <!--una animación cuando sea la hora o haya pasado-->
                 <p id="message" class="counter-title"></p>
+                <p id="errorText" class="counter-title"></p>
                 <div class="counter-numbers over">
                     <div class="counter-div">
                         <span class="counter-number" id='days'></span>
@@ -148,53 +150,69 @@
             </div>
         </div>
         <div class="ourStory">
-            <h3 class="ourStory-title">Nuestra Historia</h3>
-            <p class="ourStory-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia esse a
-                exercitationem? Quo
-                exercitationem culpa voluptates voluptatum porro quia dolores accusamus qui delectus optio? Quia?</p>
-
-
-
-        </div>
-        <div class="ourStory-slide gallery__overflow">
-            <div class="swiper gallery-thumbs">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="gallery__thumbnail">
-                            <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg" alt="couple photo"
-                                class="gallery__thumbnail-img">
+            <div class="ourStory-paragraph">
+                <h3 class="ourStory-title">Nuestra Historia</h3>
+                <p class="ourStory-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, laboriosam
+                    corrupti! Odit voluptates voluptatibus, mollitia nemo assumenda adipisci quibusdam, at dolor
+                    delectus consequatur pariatur?
+                </p>
+                <p class="ourStory-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio corrupti,
+                    mollitia necessitatibus dolor dicta quisquam. Neque, delectus dolorum.
+                </p>
+            </div>
+            <div class="ourStory-slide gallery__overflow">
+                <div class="swiper gallery-thumbs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gallery__thumbnail">
+                                <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg"
+                                    alt="couple photo" class="gallery__thumbnail-img">
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery__thumbnail">
-                            <img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg" alt="couple photo"
-                                class="gallery__thumbnail-img">
+                        <div class="swiper-slide">
+                            <div class="gallery__thumbnail">
+                                <img src="/src/static/img/laura-javier/AdobeStock_265300817_Preview.jpeg"
+                                    alt="couple photo" class="gallery__thumbnail-img">
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery__thumbnail">
-                            <img src="/src/static/img/laura-javier/AdobeStock_265301052_Preview.jpeg" alt="couple photo"
-                                class="gallery__thumbnail-img">
+                        <div class="swiper-slide">
+                            <div class="gallery__thumbnail">
+                                <img src="/src/static/img/laura-javier/AdobeStock_265301052_Preview.jpeg"
+                                    alt="couple photo" class="gallery__thumbnail-img">
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery__thumbnail">
-                            <img src="/src/static/img/laura-javier/AdobeStock_274990171_Preview.jpeg" alt="couple photo"
-                                class="gallery__thumbnail-img">
+                        <div class="swiper-slide">
+                            <div class="gallery__thumbnail">
+                                <img src="/src/static/img/laura-javier/AdobeStock_274990171_Preview.jpeg"
+                                    alt="couple photo" class="gallery__thumbnail-img">
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery__thumbnail">
-                            <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg" alt="couple photo"
-                                class="gallery__thumbnail-img">
+                        <div class="swiper-slide">
+                            <div class="gallery__thumbnail">
+                                <img src="/src/static/img/laura-javier/AdobeStock_265300323_Preview.jpeg"
+                                    alt="couple photo" class="gallery__thumbnail-img">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="message">
-            <p class="message-text">Dejanos un mensaje de amor...</p>
-            <button class="message-btn">Enviar</button> <!--animacion al enviar de corazones o algo asi-->
+            <!--animacion al enviar de corazones o algo asi-->
+            <div class="container">
+                <div class="notes">
+                    <div id="create">
+                        <i class="fa-solid fa-plus"></i>
+                        <div class="createBox">
+                            <div class="innerCreateBox"><textarea name="" id="userInput" maxlength="160"
+                                    placeholder="Write Here..."></textarea></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
         <div class="gift">
             <h3 class="gift-title"></h3>
@@ -259,8 +277,8 @@
         <p>Contacto</p>
     </footer>
     <!--SWIPER BUNDLE ES PARA LA GALLERIA Y LOS PACKAGE.json-->
-    <script src="/src/static/swiper-bundle.min.js"></script>
-    <script src="/src/static/gallery.js"></script>
+    <!-- <script src="/src/static/swiper-bundle.min.js"></script>
+    <script src="/src/static/gallery.js"></script>-->
 
     <!--Para que funcione el countDown debe ir el script abajo, despues de cargar el DOM-->
     <script src="/src/static/script.js"></script>
