@@ -219,18 +219,18 @@
 
         </div>
         <div class="gift">
-            <h3 class="gift-title"></h3>
-            <p class="gift-text"></p>
+           <div class="gift-paragraph"> <h3 class="gift-title">Regalo</h3>
+            <p class="gift-text">Si queres sorprendernos lo podés hacer de las siguientes maneras</p>
             <ol class="gift-options">
                 <li>cbu</li>
                 <li>cbu</li>
                 <li>cbu</li>
             </ol>
-            <img src="" alt="">
+           </div> <img class="gift-image" src="/src/static/img/laura-javier/AdobeStock_265301052_Preview.jpeg" alt="">
         </div>
         <div class="confirmation">
-            <h2 class="confirmation-title"></h2>
-            <p class="confirmation-text"></p>
+            <h2 class="confirmation-title">Are you joining us?</h2>
+            <p class="confirmation-text">If are you coming to the event, please confirm before the September 2 2024</p>
             <form class="confirmation-form" method="POST" action="" name="invitados">
                 <input class="form-input" type="text" required name="name" placeholder="Nombre">
                 <input class="form-input" type="text" required name="lastname" placeholder="Apellido">
@@ -273,12 +273,28 @@
             </form>
         </div>
         <div class="map">
-
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26796.54773966382!2d-68.84088335352156!3d-32.90957596834521!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0bd878366ac1%3A0x5f462e2a510ead05!2sPlaza%20Godoy%20Cruz!5e0!3m2!1ses-419!2sar!4v1722008124624!5m2!1ses-419!2sar"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
+
     </main>
     <footer>
-        <h3>Algun mensaje lindo con foto??</h3>
-        <p>Contacto</p>
+        <div class="footer-div">
+            <h3>minvitation</h3>
+            <p>Acompañandote en momentos inolvidables.
+                <br>Descubrí las opciones opciones de tarjetas.
+            </p>
+        </div>
+        <div class="footer-div">
+            <ul>
+                <li><img src="" alt=""><span>minvitationfor@gmail.com</span></li>
+                <li><img src="" alt="">ig<span>/minvitation</span></li>
+                <li><img src="" alt=""><span>+549 261 5174304</span></li>
+            </ul>
+        </div>
     </footer>
     <!--SWIPER BUNDLE ES PARA LA GALLERIA Y LOS PACKAGE.json-->
     <!-- <script src="/src/static/swiper-bundle.min.js"></script>
@@ -286,6 +302,7 @@
 
     <!--Para que funcione el countDown debe ir el script abajo, despues de cargar el DOM-->
     <script src="/src/static/script.js"></script>
+
 
 </body>
 

@@ -204,3 +204,4 @@ document.addEventListener("DOMContentLoaded", function () {
 /*puedo armar que para desktop pasen por pagina completa y mobile y ipad pasen de a una... o que segun el ancho muestre cierta cantidad de notas*/
 //VER COMO SUBIR LAS NOTAS A SHEETS
 //PENSAR EN UN BACKEND PARA MANEJAR LOS EXCELS Y DATOS PARA QUE NO SE PIERDAN .... 
+
